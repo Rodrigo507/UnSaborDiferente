@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="146dp"
+    android:height="33dp"
+    android:viewportWidth="146"
+    android:viewportHeight="33"
+    >
+
+    <group>
+
+        <clip-path
+            android:pathData="M16.5 0H129.5C138.613 0 146 7.3873 146 16.5C146 25.6127 138.613 33 129.5 33H16.5C7.3873 33 0 25.6127 0 16.5C0 7.3873 7.3873 0 16.5 0Z"
+            />
+
+        <group
+            android:translateX="1.754"
+            android:translateY="7.687"
+            android:pivotX="73"
+            android:pivotY="16.5"
+            android:scaleX="4.192"
+            android:scaleY="29.116"
+            android:rotation="178.807"
+            >
+
+            <path
+                android:pathData="M0 0V33H146V0"
+                >
+
+                <aapt:attr name="android:fillColor">
+
+                    <gradient
+                        android:type="linear"
+                        android:startX="36.5"
+                        android:startY="16.5"
+                        android:endX="109.5"
+                        android:endY="16.5"
+                        >
+
+                        <item
+                            android:color="#915F36"
+                            android:offset="0"
+                            />
+
+                        <item
+                            android:color="#915F36"
+                            android:offset="0"
+                            />
+
+                        <item
+                            android:color="#B08E63"
+                            android:offset="0.248"
+                            />
+
+                        <item
+                            android:color="#A4DC52"
+                            android:offset="0.598"
+                            />
+
+                        <item
+                            android:color="#398215"
+                            android:offset="0.913"
+                            />
+
+                    </gradient>
+
+                </aapt:attr>
+
+            </path>
+
+        </group>
+
+    </group>
+
+</vector>

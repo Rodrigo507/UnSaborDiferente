@@ -18,12 +18,19 @@ class Menu : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_menu,container,false)
 
-
+        irTomaPedido()
 
 
 
         return binding.root
 
+    }
+
+    //funcion para ir al formulario de tomar pedidos
+    fun irTomaPedido(){
+        binding.btnPedidos.setOnClickListener {
+            it.findNavController().navigate(MenuDirections.actionMenuToPedidos())
+        }
     }
 
 
