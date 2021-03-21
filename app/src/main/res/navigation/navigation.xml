@@ -20,7 +20,11 @@
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
-            android:id="@+id/action_menu_to_login"
-            app:destination="@id/login" />
+            android:id="@+id/action_menu_to_pedidos"
+            app:destination="@id/pedidos" />
     </fragment>
+    <fragment
+        android:id="@+id/pedidos"
+        android:name="com.example.unsabordiferente.screens.Pedidos"
+        android:label="Pedidos" />
 </navigation>
