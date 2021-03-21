@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "831983746564",
+    "project_id": "un-sabor-diferente",
+    "storage_bucket": "un-sabor-diferente.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831983746564:android:e4193e709cbf17ecdd3f51",
+        "android_client_info": {
+          "package_name": "com.example.unsabordiferente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831983746564-gqh6j4kpf5jh2qg1i12m6un690tush2b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDst243mtCiTcaJR4FG1Bsefc0P0Cy4qBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831983746564-gqh6j4kpf5jh2qg1i12m6un690tush2b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

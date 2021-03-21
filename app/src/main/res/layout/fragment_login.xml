@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animationCache="false"
+        android:background="@drawable/fondo"
+        tools:context=".screens.Login">
+
+
+        <!-- INICIO DE SESIÓN -->
+        <TextView
+            android:id="@+id/inicio_de_s"
+            android:layout_width="360dp"
+            android:layout_height="51dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/pt_serif_bold"
+            android:gravity="center_horizontal|top"
+            android:text="@string/inicio_de_s"
+            android:textAppearance="@style/inicio_de_s"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="158dp"
+            android:layout_height="155dp"
+            android:layout_marginTop="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inicio_de_s"
+            app:srcCompat="@drawable/logoelipse" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/pt_serif_bold"
+            android:text="Usuario"
+            android:textColor="@color/PrimerColor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/pt_serif_bold"
+            android:text="Contraseñ"
+            android:textColor="@color/PrimerColor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/userId"
+            app:layout_constraintTop_toBottomOf="@+id/userId" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userId"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+             android:hint="Nombre"
+            app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userIdCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <EditText
+            android:id="@+id/userPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:width="146dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userPassword" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
