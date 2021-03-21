@@ -47,7 +47,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/inicio_de_s" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/editNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -64,11 +64,11 @@
                 android:text="Celular *"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+                app:layout_constraintStart_toStartOf="@+id/editNombre"
+                app:layout_constraintTop_toBottomOf="@+id/editNombre" />
 
             <EditText
-                android:id="@+id/editTextPhone2"
+                android:id="@+id/editCelular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -85,11 +85,11 @@
                 android:text="Cantidad *"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/editTextPhone2"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPhone2" />
+                app:layout_constraintStart_toStartOf="@+id/editCelular"
+                app:layout_constraintTop_toBottomOf="@+id/editCelular" />
 
             <EditText
-                android:id="@+id/editTextNumberSigned"
+                android:id="@+id/editCantidad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -106,11 +106,11 @@
                 android:text="Ubicacion de entrega *"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/editTextNumberSigned"
-                app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned" />
+                app:layout_constraintStart_toStartOf="@+id/editCantidad"
+                app:layout_constraintTop_toBottomOf="@+id/editCantidad" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/editUbic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -118,6 +118,7 @@
                 android:inputType="textPersonName"
                 app:layout_constraintStart_toStartOf="@+id/textView7"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
 
             <ImageButton
                 android:id="@+id/btnAgregar"
@@ -131,7 +132,7 @@
                 android:src="@drawable/btn_agregar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"></ImageButton>
+                app:layout_constraintTop_toBottomOf="@+id/editUbic"></ImageButton>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
