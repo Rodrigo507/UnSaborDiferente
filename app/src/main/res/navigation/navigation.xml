@@ -22,9 +22,20 @@
         <action
             android:id="@+id/action_menu_to_pedidos"
             app:destination="@id/pedidos" />
+        <action
+            android:id="@+id/action_menu_to_listaPedidos"
+            app:destination="@id/listaPedidos" />
     </fragment>
     <fragment
         android:id="@+id/pedidos"
         android:name="com.example.unsabordiferente.screens.Pedidos"
-        android:label="Pedidos" />
+        android:label="Pedidos"
+        tools:layout="@layout/fragment_pedidos"
+        />
+    <fragment
+        android:id="@+id/listaPedidos"
+        android:name="com.example.unsabordiferente.screens.listaPedidos.ListaPedidos"
+        android:label="ListaPedidos"
+        tools:layout="@layout/fragment_lista_pedidos"
+        />
 </navigation>

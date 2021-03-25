@@ -1,25 +1,23 @@
 package com.example.unsabordiferente.screens
 
 import android.os.Bundle
-import android.util.Log
 
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.unsabordiferente.Clientes
 import com.example.unsabordiferente.R
 import com.example.unsabordiferente.databinding.FragmentPedidosBinding
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 
 class Pedidos : Fragment() {
     private lateinit var binding: FragmentPedidosBinding
-    val db = Firebase.database
-    val myRefPedidos = db.getReference("pedidos")
+    var db = FirebaseFirestore.getInstance()
     var celular: String = ""
     var cantidad: String = ""
     var nombre: String = ""
@@ -37,7 +35,9 @@ class Pedidos : Fragment() {
             ubicacion = binding.editUbic.text.toString()
             if (celular.isNotBlank() and cantidad.isNotBlank() and nombre.isNotEmpty() and ubicacion.isNotBlank()) {
                 var cliente= Clientes(nombre,cantidad,celular,ubicacion)
-                myRefPedidos.child(cliente.celular).setValue(cliente)
+                db.collection("clientes")
+                    .document(celular).set(cliente)
+//                myRefPedidos.child(nombre).child("datatos").setValue(cliente)
             }
 
         }
@@ -48,7 +48,6 @@ class Pedidos : Fragment() {
         return binding.root
     }
 
-    //funcion de obtener los datos del formulario
 
 
 }

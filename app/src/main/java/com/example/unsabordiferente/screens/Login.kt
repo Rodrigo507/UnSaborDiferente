@@ -2,16 +2,13 @@ package com.example.unsabordiferente.screens
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation.findNavController
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.unsabordiferente.R
 import com.example.unsabordiferente.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -41,8 +38,7 @@ class Login : Fragment() {
         binding.btnLogin.setOnClickListener {
             var user = binding.userIdCorreo.text.toString().trim()
             var pswd = binding.userPassword.text.toString().trim()
-            Log.i("testLogin", user)
-            Log.i("testLogin", pswd)
+
             if (user != "" && pswd != "") {
                 binding.progressCircular.visibility = View.VISIBLE
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(user, pswd)
@@ -69,8 +65,8 @@ class Login : Fragment() {
         super.onStart()
         var currentUser = auth.currentUser
         if (currentUser != null) {
+            Log.i("xd", currentUser.toString())
             requireView().findNavController().navigate(LoginDirections.actionLoginToMenu())
         }
-        Log.i("xd", currentUser.toString())
     }
 }

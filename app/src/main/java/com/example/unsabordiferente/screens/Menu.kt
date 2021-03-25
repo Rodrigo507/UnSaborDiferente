@@ -19,6 +19,7 @@ class Menu : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_menu,container,false)
 
         irTomaPedido()
+        irListadoPedido()
 
 
 
@@ -30,6 +31,13 @@ class Menu : Fragment() {
     fun irTomaPedido(){
         binding.btnPedidos.setOnClickListener {
             it.findNavController().navigate(MenuDirections.actionMenuToPedidos())
+        }
+    }
+    //funcion ir a listado de pedidos
+
+    fun irListadoPedido(){
+        binding.btnListadoPedido.setOnClickListener {
+            it.findNavController().navigate(MenuDirections.actionMenuToListaPedidos())
         }
     }
 
