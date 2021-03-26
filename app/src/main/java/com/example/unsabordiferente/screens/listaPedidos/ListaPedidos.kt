@@ -21,12 +21,19 @@ class ListaPedidos : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_lista_pedidos, container, false)
         viewModel = ViewModelProvider(this).get(ListaPedidosViewModel::class.java)
 
+        val adapter =ListaPedidoAdapter()
+        binding.recyclerView.adapter = adapter
 
         viewModel.listasPedidos.observeForever {
-            for (x in it) {
-                Log.i("lista", x.nombre)
+            it?.let {
+                Log.i("xd",it.toList().toString())
+                adapter.listado = it.toList()
             }
+//            for (x in it) {
+//                Log.i("lista", x.nombre)
+//            }
         }
+
 
 //        binding.lifecycleOwner = viewLifecycleOwner
 
