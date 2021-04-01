@@ -1,6 +1,6 @@
 package com.example.unsabordiferente
 
 //class Clientes(var nombre:String, var cantidad:String,var celular:String,var ubicEntrega:String, var pedido:Boolean = true) {
-class Clientes(var nombre:String="", var cantidad:String="",var celular:String="",var ubicEntrega:String="", var pedido:Boolean = true) {
+data class Clientes(var nombre:String="", var cantidad:String="",var celular:String="",var ubicEntrega:String="", var pedido:Boolean = true) {
 
 }

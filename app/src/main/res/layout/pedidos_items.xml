@@ -2,7 +2,11 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <data>
+        <variable
+            name="cliente"
+            type="com.example.unsabordiferente.Clientes" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
@@ -16,7 +20,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:shadowColor="#000000"
-            android:text="dfsdf"
+            android:text="1"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:shadowColor="#000000"
-            android:text="TextView"
+            android:text="@{cliente.nombre}"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:shadowColor="#000000"
-            android:text="TextView"
+            android:text="@{cliente.cantidad}"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/nombre"
             app:layout_constraintTop_toBottomOf="@+id/nombre" />
@@ -53,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:shadowColor="#000000"
-            android:text="TextView"
+            android:text="@{cliente.celular}"
             android:textSize="18sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/cantidad"
             app:layout_constraintStart_toEndOf="@+id/cantidad" />

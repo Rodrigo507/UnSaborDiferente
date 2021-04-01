@@ -1,18 +1,16 @@
 package com.example.unsabordiferente.screens
 
 import android.os.Bundle
-
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.example.unsabordiferente.Clientes
 import com.example.unsabordiferente.R
 import com.example.unsabordiferente.databinding.FragmentPedidosBinding
-import com.google.firebase.database.ktx.database
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 
 
 class Pedidos : Fragment() {
@@ -34,10 +32,14 @@ class Pedidos : Fragment() {
             nombre = binding.editNombre.text.toString()
             ubicacion = binding.editUbic.text.toString()
             if (celular.isNotBlank() and cantidad.isNotBlank() and nombre.isNotEmpty() and ubicacion.isNotBlank()) {
-                var cliente= Clientes(nombre,cantidad,celular,ubicacion)
+                var cliente = Clientes(nombre, cantidad, celular, ubicacion)
                 db.collection("clientes")
                     .document(celular).set(cliente)
+                Snackbar.make(it, "Pedido Agregado Correctamente", Snackbar.LENGTH_LONG).show()
 //                myRefPedidos.child(nombre).child("datatos").setValue(cliente)
+            } else {
+                Snackbar.make(it, "LLenar todos los campos correctamente", Snackbar.LENGTH_SHORT).show()
+
             }
 
         }
@@ -47,7 +49,6 @@ class Pedidos : Fragment() {
 
         return binding.root
     }
-
 
 
 }

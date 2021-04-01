@@ -5,12 +5,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.unsabordiferente.R
 import com.example.unsabordiferente.databinding.FragmentListaPedidosBinding
 import com.example.unsabordiferente.network.Repository
+import com.google.android.material.snackbar.Snackbar
 
 class ListaPedidos : Fragment() {
 
@@ -26,24 +28,13 @@ class ListaPedidos : Fragment() {
 
         viewModel.listasPedidos.observeForever {
             it?.let {
-                Log.i("xd",it.toList().toString())
-                adapter.listado = it.toList()
+                adapter.submitList(it)
             }
-//            for (x in it) {
-//                Log.i("lista", x.nombre)
-//            }
+
         }
 
 
-//        binding.lifecycleOwner = viewLifecycleOwner
-
-
-//        repository.listaClientesPedidos.observe(viewLifecycleOwner, Observer {
-//            for (x in it) {
-//
-//                Log.i("lista", x.nombre)
-//            }
-//        })
+        binding.lifecycleOwner = this
 
         return binding.root
     }
