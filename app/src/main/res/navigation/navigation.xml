@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_menu_to_listaPedidos"
             app:destination="@id/listaPedidos" />
+        <action
+            android:id="@+id/action_menu_to_recursosFragment"
+            app:destination="@id/recursosFragment" />
     </fragment>
     <fragment
         android:id="@+id/pedidos"
@@ -38,4 +41,9 @@
         android:label="ListaPedidos"
         tools:layout="@layout/fragment_lista_pedidos"
         />
+    <fragment
+        android:id="@+id/recursosFragment"
+        android:name="com.example.unsabordiferente.screens.recursos.RecursosFragment"
+        android:label="fragment_recursos"
+        tools:layout="@layout/fragment_recursos" />
 </navigation>

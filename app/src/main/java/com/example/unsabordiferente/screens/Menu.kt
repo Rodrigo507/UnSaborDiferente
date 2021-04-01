@@ -2,24 +2,24 @@ package com.example.unsabordiferente.screens
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.unsabordiferente.R
 import com.example.unsabordiferente.databinding.FragmentMenuBinding
-import com.google.firebase.auth.FirebaseAuth
 
 
 class Menu : Fragment() {
-    private lateinit var binding : FragmentMenuBinding
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_menu,container,false)
+    private lateinit var binding: FragmentMenuBinding
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_menu, container, false)
 
         irTomaPedido()
         irListadoPedido()
+        irRecursos()
 
 
 
@@ -28,17 +28,28 @@ class Menu : Fragment() {
     }
 
     //funcion para ir al formulario de tomar pedidos
-    fun irTomaPedido(){
+    fun irTomaPedido() {
         binding.btnPedidos.setOnClickListener {
             it.findNavController().navigate(MenuDirections.actionMenuToPedidos())
         }
     }
     //funcion ir a listado de pedidos
 
-    fun irListadoPedido(){
+    fun irListadoPedido() {
         binding.btnListadoPedido.setOnClickListener {
             it.findNavController().navigate(MenuDirections.actionMenuToListaPedidos())
+
         }
+    }
+
+    fun irRecursos() {
+        binding.btnAgregarRecurso.setOnClickListener {
+            it.findNavController().navigate(MenuDirections.actionMenuToRecursosFragment())
+        }
+//        binding.btnAgregarRecurso.setOnLongClickListener {
+//            Log.i("xd", "xdd")
+//            true
+//        }
     }
 
 
