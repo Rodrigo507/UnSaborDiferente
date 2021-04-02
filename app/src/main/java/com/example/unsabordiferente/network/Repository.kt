@@ -3,6 +3,7 @@ package com.example.unsabordiferente.network
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.unsabordiferente.Clientes
+import com.example.unsabordiferente.Huevos
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Repository {
@@ -28,5 +29,12 @@ class Repository {
     fun agregarPedido(celular: String, cliente: Clientes) {
         db.collection("clientes")
             .document(celular).set(cliente)
+    }
+
+    //Funcion de agregar un nuevo recurso
+    fun agregarRecurso(recurso: Huevos){
+        db.collection("recursos")
+            .document(recurso.date).set(recurso)
+
     }
 }
