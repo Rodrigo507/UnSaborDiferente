@@ -9,13 +9,14 @@ import androidx.fragment.app.Fragment
 import com.example.unsabordiferente.Clientes
 import com.example.unsabordiferente.R
 import com.example.unsabordiferente.databinding.FragmentPedidosBinding
+import com.example.unsabordiferente.network.Repository
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 
 
 class Pedidos : Fragment() {
     private lateinit var binding: FragmentPedidosBinding
-    var db = FirebaseFirestore.getInstance()
+    val repository = Repository()
     var celular: String = ""
     var cantidad: String = ""
     var nombre: String = ""
@@ -25,7 +26,6 @@ class Pedidos : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_pedidos, container, false)
 
-
         binding.btnAgregar.setOnClickListener {
             celular = binding.editCelular.text.toString()
             cantidad = binding.editCantidad.text.toString()
@@ -33,8 +33,7 @@ class Pedidos : Fragment() {
             ubicacion = binding.editUbic.text.toString()
             if (celular.isNotBlank() and cantidad.isNotBlank() and nombre.isNotEmpty() and ubicacion.isNotBlank()) {
                 var cliente = Clientes(nombre, cantidad, celular, ubicacion)
-                db.collection("clientes")
-                    .document(celular).set(cliente)
+                repository.agregarPedido(celular,cliente)
                 Snackbar.make(it, "Pedido Agregado Correctamente", Snackbar.LENGTH_LONG).show()
 //                myRefPedidos.child(nombre).child("datatos").setValue(cliente)
             } else {

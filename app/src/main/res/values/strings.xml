@@ -7,4 +7,6 @@
     <string name="menu">Menú</string>
     <string name="agregarPedido">AGREGAR PEDIDO</string>
     <string name="recursos">RECURSOS</string>
+    <string name="cantidad">Cantidad: %s</string>
+    <string name="contacto">Contacto: %s</string>
 </resources>
